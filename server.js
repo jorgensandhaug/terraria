@@ -10,7 +10,8 @@ app.set('json spaces', 2); // number of spaces for indentation
 // const routes = require('./routes/routes')
 // app.use('/', routes)
 
-const PORT = process.env.PORT || 3000
+// const PORT = process.env.PORT || 3000
+const PORT = 3000
 
 server.listen(PORT)
 
