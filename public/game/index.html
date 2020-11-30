@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script defer src="/socket.io/socket.io.js"></script>
+    <script defer src="variables.js"></script>
+    <script defer src="app.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body oncontextmenu="return false;">
+    <form>
+        <input type="text" name="username" id="textField"><br>
+        <input type="radio" name="fps" value="2" id="fps"><label>15fps</label><br>
+        <input type="radio" name="fps" value="1" id="fps"><label>30fps</label><br>
+        <input type="submit" value="Spill">
+    </form>
+    <canvas></canvas>
+</body>
+</html>

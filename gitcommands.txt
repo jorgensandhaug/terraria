@@ -1,0 +1,31 @@
+1. se alle branches, den du er på har * vesidenav:
+    git branch -a
+
+2. lag ny branch og bytt til den:
+    git checkout -b branchNameHere
+
+3. bytt til en branch:
+    git checkout branchName
+
+4. legg til endringer:
+    git add filNavn", eller git add . for alt
+
+5. commit endringer:
+    git commit -m "melding"
+    git commit -am "melding" for å legge til og committe samtidig
+
+6. merge inn i master-branch:
+    1. bytt til master branch med git checkout master
+    2. git merge branchName --no-ff
+
+7. push git:
+    git push
+
+8. slett branch:
+    git branch -d branchName
+
+
+
+andre ting:
+se tidligere commits:
+    git log
