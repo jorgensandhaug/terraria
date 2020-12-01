@@ -36,7 +36,7 @@ storage.collection("map").orderBy("index").get().then(snap =>{
     let antall = snap.docs.length
     console.log("Antall docs i db: " +antall)
     mapInfo = snap.docs[antall-1].data()
-
+    
     if(Object.keys(mapInfo).length == 0) console.log("Couldnt get a map from the db, fix and restart")
     else{
         map = JSON.parse(mapInfo.stringifiedMap)
