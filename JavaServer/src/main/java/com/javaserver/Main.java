@@ -5,17 +5,17 @@ import org.glassfish.tyrus.server.Server;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-//        Map<String, Object> props = new HashMap<>();
-        Server server = new Server("localhost", 80, null, Endpoint.class);
-//        new Server()
+        Server server = new Server("localhost", 80, "/websocket", null, Endpoint.class);
 
         try {
             server.start();
-            Thread.sleep(10000);
-        } catch (DeploymentException | InterruptedException e) {
+            Scanner sc = new Scanner(System.in);
+            String inp = sc.next();
+        } catch (DeploymentException e) {
             e.printStackTrace();
         }
         finally {
