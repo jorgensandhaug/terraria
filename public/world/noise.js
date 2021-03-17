@@ -262,7 +262,7 @@ function placeOreChunk(map, x, y){
 
 let img = new Image()
 img.src = "../game/assets/blocks/general/dirt.png"
-let scale, octaves, lacunarity, persistance, xPos, yPos, blockSize, noiseMap, map, caveMap,
+let scale, octaves, lacunarity, persistance, xPos, yPos, blockSize, noiseMap, map, caveMap, cavesOn, sendBtn, zoomSlider, caveFillPercent,
 prevX, prevY, mouseIsPressed, slideSpeed, seedInp, createRandomSeed, updateBtn, mapWidthInp, mapHeightInp
 function setup(){
     createCanvas(window.innerWidth-5, window.innerHeight-5)
@@ -340,7 +340,7 @@ function setup(){
                 width: map[0].length,
                 height: map.length,
                 stringifiedMap: sendMap,
-                index: index,
+                index: index+1,
                 interactMap: "{}"
             })
         })
