@@ -335,12 +335,12 @@ function setup(){
         let sendMap = JSON.stringify(map)
         
         db.collection("map").get().then(snap =>{
-            let index = snap.docs.length
+            let index = snap.docs.length+1;
             db.collection("map").doc(index.toString()).set({
                 width: map[0].length,
                 height: map.length,
                 stringifiedMap: sendMap,
-                index: index+1,
+                index: index,
                 interactMap: "{}"
             })
         })
