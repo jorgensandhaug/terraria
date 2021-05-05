@@ -2,16 +2,12 @@ let showInventory = false
 let showSafe = false
 let selectedInventoryIndex = 0
 let inventorySwap = false
-let animationSkipCount = 0
-let fpsNumber = 0
 form.onsubmit = (e) => {
     // dette er henriks kommentar
     //Jørgen er kul
     e.preventDefault()
         socket.emit('new-user', textField.value, w, h)
         form.style.display = "none"
-        fpsNumber = (fps[0].checked==true) ? 2 : 1
-        console.log(fpsNumber)
         socket.on("playerID", id => {
             playerID = id
             console.log(playerID)
@@ -20,11 +16,9 @@ form.onsubmit = (e) => {
             for (let [id, user] of Object.entries(users)) {
                 user.player.img = playerSprites[user.player.sprite.playerSprite][user.player.movement][user.player.direction][user.player.sprite.index]
             }
-            animationSkipCount+=1
-            if(animationSkipCount==fpsNumber){
-                if(playerID) draw(users, mapWidth, mapHeight)
-                animationSkipCount = 0
-            }
+
+            draw(users, mapWidth, mapHeight)
+    
         })
     
         window.addEventListener("keydown", e => {
