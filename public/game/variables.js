@@ -2,7 +2,8 @@ const canvas = document.querySelector("canvas")
 const c = canvas.getContext("2d")
 const form = document.querySelector('form')
 const textField = document.getElementById('textField')
-const socket = io.connect("79.160.125.77:3000")//io.connect('172.104.146.167:3000')
+const socket = io.connect("51.175.30.75:3000")
+if(!socket.connected) console.log("Could not connect to the game server, maybe wrong ip in script?") 
 let playerID
 
 
