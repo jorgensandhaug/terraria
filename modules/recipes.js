@@ -1,4 +1,4 @@
-const variables = require("./variables")
+const variables = require(__dirname+"/variables")
 const Item = variables.Item
 let recipes = {}
 

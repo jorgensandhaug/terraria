@@ -3,11 +3,11 @@ const app = express()
 const server = require('http').Server(app)
 const io = require('socket.io')(server)
 
-app.use(express.static('public'))
+app.use(express.static(__dirname+'/public'))
 app.use(express.urlencoded({ extended: true }))
 app.set('json spaces', 2); // number of spaces for indentation
 
-// const routes = require('./routes/routes')
+// const routes = require(__dirname+'/routes/routes')
 // app.use('/', routes)
 
 // const PORT = process.env.PORT || 3000
@@ -17,7 +17,7 @@ server.listen(PORT)
 
 // ----variables
 let users = {}
-let variables = require('./modules/variables')
+let variables = require(__dirname+'/modules/variables')
 let storage = variables.storage
 let map //= variables.map
 let mapInfo
@@ -70,7 +70,7 @@ storage.collection("map").orderBy("index").get().then(snap =>{
 
 let interactables = variables.interactables
 const g = 0.00004*16
-const db = require('./modules/db')
+const db = require(__dirname+'/modules/db')
 
 
 // functions
@@ -78,10 +78,10 @@ const Item = variables.Item
 const Safe = variables.Safe
 const Player = variables.Player
 const Controller = variables.Controller
-const gameFunctions = require('./modules/gameFunctions')
-const usefulFunctions = require('./modules/usefulFunctions')
-const dbFunctions = require('./modules/dbFunctions')
-const recipes = require('./modules/recipes')
+const gameFunctions = require(__dirname+'/modules/gameFunctions')
+const usefulFunctions = require(__dirname+'/modules/usefulFunctions')
+const dbFunctions = require(__dirname+'/modules/dbFunctions')
+const recipes = require(__dirname+'/modules/recipes')
 const update = gameFunctions.update
 const updateSprites = gameFunctions.updateSprites
 const keysD = gameFunctions.keysD

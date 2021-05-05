@@ -1,4 +1,4 @@
-const variables = require('./variables')
+const variables = require(__dirname+'/variables')
 let storage = variables.storage
 let interactMap = variables.interactMap
 const Zombie = variables.Zombie
@@ -9,10 +9,10 @@ const speed = variables.speed
 const lightEmittingBlocks = variables.lightEmittingBlocks
 const Item = variables.Item
 const Safe = variables.Safe
-const recipes = require("./recipes")
+const recipes = require(__dirname+"/recipes")
 const checkRecipe = recipes.checkRecipe
 
-const usefulFunctions = require("./usefulFunctions")
+const usefulFunctions = require(__dirname+"/usefulFunctions")
 const equalsSome = usefulFunctions.equalsSome
 const equalsAll = usefulFunctions.equalsAll
 const mapValue = usefulFunctions.mapValue

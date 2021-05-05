@@ -1,4 +1,4 @@
-const usefulFuncions = require("./usefulFunctions")
+const usefulFuncions = require(__dirname+"/usefulFunctions")
 const getLevel = usefulFuncions.getLevel
 //smeller inn firebase storage
 const firebase = require("firebase")
