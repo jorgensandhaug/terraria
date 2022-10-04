@@ -70,7 +70,6 @@ storage.collection("map").orderBy("index").get().then(snap =>{
 
 let interactables = variables.interactables
 const g = 0.00004*16
-const db = require(__dirname+'/modules/db')
 
 
 // functions
@@ -80,7 +79,6 @@ const Player = variables.Player
 const Controller = variables.Controller
 const gameFunctions = require(__dirname+'/modules/gameFunctions')
 const usefulFunctions = require(__dirname+'/modules/usefulFunctions')
-const dbFunctions = require(__dirname+'/modules/dbFunctions')
 const recipes = require(__dirname+'/modules/recipes')
 const update = gameFunctions.update
 const updateSprites = gameFunctions.updateSprites
@@ -92,10 +90,7 @@ const objectIsEmpty = usefulFunctions.objectIsEmpty
 const userExists = usefulFunctions.userExists
 const updateMousePos = usefulFunctions.updateMousePos
 const mapValue = usefulFunctions.mapValue
-const getPlayerInfo = dbFunctions.getPlayerInfo
-const updatePlayerInfo = dbFunctions.updatePlayerInfo
 const copy = usefulFunctions.copy
-const insertIntoCollection = dbFunctions.insertIntoCollection
 const updatePlayerHand = gameFunctions.updatePlayerHand
 const swap = gameFunctions.swap
 const pickupItem = gameFunctions.pickupItem
@@ -225,7 +220,6 @@ io.on('connection', socket => {
 
     socket.on('new-insert', (collection, data) => {
         console.log("new insert!!", collection)
-        insertIntoCollection(collection, data)
     })
 
 })
